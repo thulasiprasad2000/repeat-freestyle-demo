@@ -1,2 +1,2 @@
 echo 'Hello World'
-echo 'automatic trigger to push event from scm'
+echo 'automatic trigger to push event from SCM'
