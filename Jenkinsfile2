@@ -7,11 +7,11 @@ pipeline {
         stage('Build') {
 
             steps {
+                sh '''
+                echo "Building..."
 
-                sh 'echo "Building..."'
-
-                sh 'ls -al'
-
+                ls -al
+                    '''
             }
 
         }
@@ -20,14 +20,15 @@ pipeline {
 
             steps {
 
-                sh 'echo "Testing..."'
+                sh '''
+                echo "Testing..."
 
-                sh 'pwd'
+                pwd
 
-                sh 'touch testfile.txt'
+                touch testfile.txt
 
-                sh 'ls -l'
-
+                ls -l
+                    '''
             }
 
         }
@@ -35,15 +36,15 @@ pipeline {
         stage('Deploy') {
 
             steps {
+                sh '''
+                cat ./deploy.sh
 
-                sh 'cat ./deploy.sh'
+                echo "Deploying..."
 
-                sh 'echo "Deploying..."'
+                mv testfile.txt /tmp
 
-                sh 'mv testfile.txt /tmp'
-
-                sh 'ls -l /tmp'
-
+                ls -l /tmp
+                    '''
             }
 
         }
