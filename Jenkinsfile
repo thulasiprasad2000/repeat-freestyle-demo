@@ -7,7 +7,7 @@ pipeline{
             stage('Make Directory'){
 
                 steps{
-
+                    sh 'echo "Test change to Jenkinsfile"'
                     sh "mkdir ~/jenkins-tutorial-test"
 
                 }
