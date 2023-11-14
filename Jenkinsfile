@@ -8,7 +8,7 @@ pipeline{
 
                 steps{
                     sh 'echo "Test change to Jenkinsfile"'
-                    sh "rm -F ~/jenkins-tutorial-test"
+                    sh "rm -r ~/jenkins-tutorial-test"
                     sh "mkdir ~/jenkins-tutorial-test"
 
                 }
